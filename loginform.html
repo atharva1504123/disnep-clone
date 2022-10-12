@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN-SIGNUP Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudfare.com/ajax/libs/fonts-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9K+qNFURSX+cKL9EIR+Z0htILoNl9GIKS57V1myNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sDNyeRssA="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    />
+  </head>
+  <style>
+    body {
+      background: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10rem;
+    }
+
+    .container {
+      position: relative;
+      bottom: 5em;
+    }
+
+    .circle {
+      width: 7rem;
+      height: 7rem;
+      background: linear-gradient(45deg, #7b4397, #dc2430);
+      border-radius: 50%;
+      z-index: -1;
+      position: absolute;
+      top: -57px;
+      right: -57px;
+    }
+
+    .circle:nth-child(2) {
+      top: 29.5em;
+      left: -52px;
+      background: linear-gradient(45deg #0d8046 #1cb5e6);
+    }
+
+    .card {
+      backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgb(255, 255, 255, 11%);
+      border-radius: 8px;
+      border: 1px solid rgb(255, 255, 255, 0.125);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25rem;
+      padding: 20px 20px;
+      padding-top: 38px;
+    }
+
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      font-size: 2em;
+      color: #b3b3b3;
+    }
+
+    .form-input {
+      width: 20em;
+      position: relative;
+    }
+
+    #label-username {
+      position: relative;
+      left: 10px;
+      top: -4em;
+      font-size: 1.2em;
+      transition: all 0.2s;
+      padding: 0 2px;
+      z-index: 1;
+      color: #b3b3b3;
+    }
+
+    #label-password {
+      position: relative;
+      left: 10px;
+      bottom: 4em;
+      font-size: 1.2em;
+      transition: all 0.2s;
+      padding: 0 2px;
+      z-index: 1;
+      color: #b3b3b3;
+    }
+
+    .text-input {
+      padding: 0.8rem;
+      margin: 1em;
+      position: relative;
+      right: 1.5em;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #2f2c45;
+      background: #272530;
+      border-radius: 5px;
+      font-size: 18px;
+      outline: none;
+      transition: all 0.3s;
+      color: #fff;
+    }
+
+    .label::before {
+      content: "";
+      height: 5px;
+      background: #272530;
+      position: absolute;
+      left: 0px;
+      top: 10px;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .text-input:focus {
+      border: 2px solid #7e4ccb;
+    }
+
+    .text-input :focus + .label {
+      top: -10px;
+      color: #7e4ccb;
+      font-size: 14px;
+    }
+
+    .text-input::placeholder {
+      font-size: 16px;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .text-input:focus::placeholder {
+      opacity: 1;
+    }
+
+    #label-checkbox {
+      position: relative;
+      top: 0.3em;
+      right: 4.8em;
+      font-size: 1.2em;
+      z-index: 1;
+      color: #b3b3b3;
+    }
+
+    #checkbox {
+      position: relative;
+      top: 0.4em;
+      right: 7em;
+      color: #b3b3b3;
+    }
+
+    .form-input p {
+      position: relative;
+      bottom: 1.8em;
+      left: 10em;
+      display: inline-block;
+      font-size: 1.2em;
+      color: #b3b3b3;
+    }
+
+    .btn {
+      cursor: pointer;
+      font-size: 1.2em;
+      position: relative;
+      bottom: 1.2em;
+      font-weight: bold;
+      right: 0.5em;
+      color: #b3b3b3;
+      width: 18em;
+      padding: 5px;
+      background: #272530;
+      border: 2px solid #2f2c45;
+      border-radius: 0.2em;
+    }
+
+    #sign-up {
+      position: relative;
+      left: 1em;
+      top: 0em;
+      font-size: 1.4em;
+    }
+
+    #sign-up a{
+      text-decoration: none;
+      color: rgb(215, 139, 38);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="card">
+        <h4 class="title">Login Form</h4>
+        <div class="form-input">
+          <input
+            type="text"
+            id="username"
+            class="text-input"
+            autocomplete="off"
+            placeholder="Enter your Username"
+            required
+          />
+          <label for="username" id="label-username" class="label"
+            >Username</label
+          >
+          <input
+            type="password"
+            id="password"
+            class="text-input"
+            autocomplete="off"
+            placeholder="Enter password"
+            required
+          />
+          <label for="password" id="label-password" class="label"
+            >Password</label
+          >
+
+          <input type="checkbox" id="checkbox" required />
+          <label for="checkbox" id="label-checkbox">Remember Me</label>
+
+          <p>Forget Password?</p>
+
+          <!-- <input type="button" class="btn" value="Login"> -->
+          <button class="btn">Log in</button>
+
+          <p id="sign-up">Get Members Benefit . <a href="#">sign-up</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
